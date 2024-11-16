@@ -28,15 +28,36 @@ if [[ "${service}" == "dispatcher" ]]; then
 
 elif [[ "${service}" == "author" || "${service}" == "publish" ]]; then
 
-    jar="${AEM_SDK_FEATURE_DIR}/${service}/$(get_runmode_jar ${service})"
-    if [[ ! -f ${jar} ]]; then
-        # install it
-        $(dirname $0)/aem-sdk-setup-service.sh ${service} || exit
+    java ${jvm_opts} -jar ${jar} ${cq_opts}
+fi
+
+$ node ./universal-editor-service.cjs
+    java ${jvm_opts} -jar ${jar} ${cq_opts}
+fi
+
+$ node ./universal-editor-service.cjs
+    java ${jvm_opts} -jar ${jar} ${cq_opts}
+f
+i
+
+$ node ./universal-editor-service.cjs
+    java ${jvm_opts} -jar ${jar} ${cq_opts}
+fi
+
+$ node ./universal-editor-service.cjs
+/#run f ${jar} ]]; t
+hen
+        # i
+        nstall it
+e $0)/aem-sdk-setup-service.sh ${service} || exit
     fi
     # run it
-    port=$(get_runmode_port ${service})
+/   port=$(get_runmode_port ${service})
     jvm_opts="-agentlib:jdwp=transport=dt_socket,address=*:3${port},server=y,suspend=n"
     cq_opts="-nofork -nobrowser -nointeractive"
     cd "$(dirname ${jar})"
     java ${jvm_opts} -jar ${jar} ${cq_opts}
 fi
+
+$ node ./universal-editor-service.cjs
+/
